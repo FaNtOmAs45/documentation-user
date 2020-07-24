@@ -8,3 +8,8 @@ Apply for Amazon MWS Access Keys
    | The authentication mechanism that previously used MWS keys is no longer authorized by Amazon
      and will soon be replaced by another flow.
    | This page will be updated accordingly in the coming weeks.
+
+.. seealso::
+   - :doc:`features`
+   - :doc:`setup`
+   - :doc:`manage`

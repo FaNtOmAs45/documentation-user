@@ -63,3 +63,8 @@ the subtotals between Seller Central and Odoo.
    As Amazon does not necessarily apply the same taxes as those configured in Odoo, it may happen
    that order totals differ by a few cents from that on Seller Central. Those differences can be
    resolved with a write-off when reconciling the payments in Odoo.
+
+.. seealso::
+   - :doc:`features`
+   - :doc:`apply`
+   - :doc:`manage`
