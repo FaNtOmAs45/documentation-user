@@ -2,16 +2,66 @@
 Configure Amazon Connector in Odoo
 ==================================
 
+The Amazon Connector uses an Authorization Token that allows the Odoo Amazon
+platform to fetch data from your Amazon Seller Central account. This token can
+be obtained directly through Seller Central in a few clicks and will then need
+to be set up in your Odoo database configuration.
+
+Generate an Authorization Token in Seller Central
+=================================================
+
+Connect to your Seller Central account for the marketplace you initially signed
+up (e.g. if you created your account on Amazon Germany, go to
+`Amazon Seller Central for Germany <https://sellercentral.amazon.de>`_) with an administrator account.
+
+.. note::
+  You might need to use the *main* (or first) administrator account and not one
+  added subsequentely.
+
+In the main menu, select :menuselection:`Apps & Services --> Manage Your Apps`;
+in the page that displays, click on the ``Authorize new developper`` button:
+
+.. image:: ./media/seller_central_apps.png
+  :align: center
+
+Fill in the form depending on your Marketplace:
+
+.. image:: ./media/seller_central_form.png
+  :align: center
+
+For Canada, Mexico or the United States, use these values:
+
+- Developer's Name: ``Odoo S.A.``
+- Developer ID: ``586127723692``
+
+For Germany, Spain, France or Italy, use these values:
+
+- Developer's Name: ``Odoo S.A.``
+- Developer ID: ``579095187166``
+
+Amazon will then inform you that by submitting the form, you are giving access
+to your Seller Central Information to Odoo S.A.
+
+.. note::
+    Odoo S.A. is unable to access your Amazon account's information without the
+    Authorization Token which is stored in your Odoo database - we do not store
+    these tokens on our platform directly and are therefore unable to access
+    your account's information outside of the Amazon Connector normal flows.
+
 Register your Amazon account in Odoo
 ====================================
+
+.. _amazon/setup:
 
 To register your seller account in Odoo, navigate to :menuselection:`Sales --> Configuration
 --> Settings --> Connectors --> Amazon Sync --> Amazon Accounts` and click on **CREATE**.
 
 The **Seller ID** can be found in Seller Central under the link **Your Merchant Token** on the
-**Seller Account Information** page. The **Access Key** and the **Secret Key** can be found in
-Developer Central (where the :ref:`Developer Registration and Assessment form
-<amazon/developer-form>` was located).
+**Seller Account Information** page. The **Authorization Token** is the one you generated in the
+previous step.
+
+Upon saving, your credentials are checked. In case of issues, an error will be displayed - the
+information cannot be saved until your credentials are recognized by Amazon.
 
 Once the account is registered, the marketplaces available to this account are synchronized and
 listed under the **Marketplaces** tab. If you wish, you can remove some items from the list of
